@@ -23,6 +23,12 @@ connection.once('open',()=>{
     console.log("Mongo DB Connected");
 });
 
+const exercisesRouter = require('./routes/exercises');
+const usersRouter = require('./routes/users');
+
+app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
+
 app.listen( port, () =>{
     console.log(`Example app listening at http://localhost: ${port}`)
 });
